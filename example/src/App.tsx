@@ -1,10 +1,21 @@
 import React from 'react'
 
-import { ExampleComponent } from '@thevsstech/react-material-confirm-dialog'
-import '@thevsstech/react-material-confirm-dialog/dist/index.css'
+import  {Dialog, show}   from '@thevsstech/react-material-confirm-dialog'
+import { Button } from '@material-ui/core'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Dialog>
+    <Button  onClick={() => show({
+      title: 'Use Google\'s location service',
+      content: 'Let Google help apps determine location. This means sending anonymous location data to\n' +
+        '            Google, even when no apps are running.',
+      onConfirm: () => {
+        console.log('called')
+      }
+    })}>
+      show
+    </Button>
+  </Dialog>
 }
 
 export default App
