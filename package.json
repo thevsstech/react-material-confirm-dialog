@@ -4,7 +4,7 @@
   "description": "Shows material design confirm dialog",
   "author": "thevsstech",
   "license": "MIT",
-  "repository": "thevsstech/@thevsstech/react-material-confirm-dialog",
+  "repository": "https://github.com/thevsstech/react-material-confirm-dialog.git",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
@@ -24,7 +24,8 @@
     "deploy": "gh-pages -d example/build"
   },
   "peerDependencies": {
-    "@material-ui": "*",
+    "@material-ui/core": "^4.0.0",
+
     "react": "^16.0.0"
   },
   "devDependencies": {
