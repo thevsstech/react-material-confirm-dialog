@@ -51,13 +51,14 @@ export default class DialogContainer extends React.PureComponent<Props, State> {
   }
 
   close = (after?: () => void) => {
-    this.setState(
-      {
-        visible: false,
-        config: this.defaultConfig
-      },
-      after
-    )
+    if (after) {
+      after()
+    }
+
+    this.setState({
+      visible: false,
+      config: this.defaultConfig
+    })
   }
 
   cancel = () => {
