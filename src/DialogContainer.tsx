@@ -7,12 +7,12 @@ type Props = {
 }
 
 export type DialogConfig = {
-  title: string
+  title: string | JSX.Element
   confirm?: string
   close?: string
   onConfirm: () => void
   onClose?: () => void
-  content?: string
+  content?: string | JSX.Element
 }
 
 type State = {

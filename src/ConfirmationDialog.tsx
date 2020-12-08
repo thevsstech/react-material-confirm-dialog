@@ -8,20 +8,16 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import Slide from '@material-ui/core/Slide'
 // eslint-disable-next-line no-unused-vars
 import { TransitionProps } from '@material-ui/core/transitions'
+// eslint-disable-next-line no-unused-vars
+import { DialogConfig } from './DialogContainer'
 
 const Transition = React.forwardRef<unknown, TransitionProps>((props, ref) => {
   // @ts-ignore
   return <Slide direction='up' ref={ref} {...props} />
 })
 
-type Props = {
-  title?: string
+type Props = DialogConfig & {
   visible: boolean
-  confirm?: string
-  onConfirm: () => void
-  onClose: () => void
-  cancel?: string
-  content?: string
 }
 
 export default function ({
@@ -30,7 +26,7 @@ export default function ({
   visible,
   onClose,
   confirm,
-  cancel = 'Cancel',
+  close = 'Cancel',
   content
 }: Props) {
   /* @ts-ignore */
@@ -60,7 +56,7 @@ export default function ({
       </DialogContent> */}
       <DialogActions>
         <Button onClick={onClose} color='primary'>
-          {cancel}
+          {close}
         </Button>
         <Button variant='contained' onClick={onConfirm} color='primary'>
           {confirm}
