@@ -8,8 +8,8 @@ type Props = {
 
 export type DialogConfig = {
   title: string | JSX.Element
-  confirm?: string
-  close?: string
+  confirm?: string | JSX.Element
+  close?: string | JSX.Element
   onConfirm: () => void
   onClose?: () => void
   content?: string | JSX.Element
