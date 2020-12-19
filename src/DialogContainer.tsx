@@ -4,6 +4,8 @@ import ConfirmationDialog from './ConfirmationDialog'
 
 type Props = {
   ref: RefObject<DialogContainer>
+  confirmStyle?: React.CSSProperties
+  cancelStyle?: React.CSSProperties
 }
 
 export type DialogConfig = {
@@ -83,6 +85,8 @@ export default class DialogContainer extends React.PureComponent<Props, State> {
         visible={this.state.visible}
         {...this.state.config}
         onClose={this.cancel}
+        cancelStyle={this.props.cancelStyle}
+        confirmStyle={this.props.confirmStyle}
         onConfirm={this.confirm}
       />
     ) : null

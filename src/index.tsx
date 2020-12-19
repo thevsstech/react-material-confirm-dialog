@@ -5,15 +5,21 @@ import DialogContainer from './DialogContainer'
 
 type Props = {
   children: any
+  confirmStyle?: React.CSSProperties
+  cancelStyle?: React.CSSProperties
 }
 
 const ToastRef = React.createRef<DialogContainer>()
 
-export function Dialog({ children }: Props) {
+export function Dialog({ children, cancelStyle, confirmStyle }: Props) {
   return (
     <React.Fragment>
       {children}
-      <DialogContainer ref={ToastRef} />
+      <DialogContainer
+        cancelStyle={cancelStyle}
+        confirmStyle={confirmStyle}
+        ref={ToastRef}
+      />
     </React.Fragment>
   )
 }

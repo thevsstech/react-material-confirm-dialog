@@ -18,6 +18,8 @@ const Transition = React.forwardRef<unknown, TransitionProps>((props, ref) => {
 
 type Props = DialogConfig & {
   visible: boolean
+  confirmStyle?: React.CSSProperties
+  cancelStyle?: React.CSSProperties
 }
 
 export default function ({
@@ -27,7 +29,9 @@ export default function ({
   onClose,
   confirm,
   close = 'Cancel',
-  content
+  content,
+  cancelStyle,
+  confirmStyle
 }: Props) {
   /* @ts-ignore */
   return (
@@ -55,10 +59,15 @@ export default function ({
         </DialogContentText>
       </DialogContent> */}
       <DialogActions>
-        <Button onClick={onClose} color='primary'>
+        <Button style={cancelStyle} onClick={onClose} color='primary'>
           {close}
         </Button>
-        <Button variant='contained' onClick={onConfirm} color='primary'>
+        <Button
+          style={confirmStyle}
+          variant='contained'
+          onClick={onConfirm}
+          color='primary'
+        >
           {confirm}
         </Button>
       </DialogActions>
